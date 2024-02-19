@@ -1,5 +1,6 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import { sumProducts } from "../helpers/helper";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const initialState = {
   selectedItems: [],
@@ -24,7 +25,7 @@ const reducer = (state, action) => {
     case "REMOVE_ITEM":
       const newSelectedItem = state.selectedItems.filter(
         (item) => item.id !== action.payload.id
-      ); 
+      );
       return {
         ...state,
         selectedItems: [...newSelectedItem],
@@ -63,17 +64,22 @@ const reducer = (state, action) => {
 };
 
 function CartProvider({ children }) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [value, setValue] = useLocalStorage("products", initialState);
+  const [state, dispatch] = useReducer(reducer, value);
+
+  useEffect(() => {
+    setValue({ ...state });
+  }, [state]);
 
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={[state, dispatch]}>
       {children}
     </CartContext.Provider>
   );
 }
 
 const useCart = () => {
-  const { state, dispatch } = useContext(CartContext);
+  const [state, dispatch] = useContext(CartContext);
   return [state, dispatch];
 };
 

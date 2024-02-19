@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 
-import ProductsPage from "./pages/ProductsPage";
-import DetailsPage from "./pages/DetailsPage";
-import CheckOutPage from "./pages/CheckOutPage";
-import PageNotFound from "./pages/404";
+import ProductsPage from "./pages/productsPage/ProductsPage";
+import DetailsPage from "./pages/detailPage/DetailsPage";
+import CheckOutPage from "./pages/checkoutPage/CheckOutPage";
+import PageNotFound from "./pages/404Page/404";
 import ProductsProvider from "./context/ProductContext";
 import CartProvider from "./context/CartContext";
 import Layout from "./layout/Layout";

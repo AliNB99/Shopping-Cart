@@ -1,7 +1,7 @@
 import { FaListUl } from "react-icons/fa";
 
-import { createQueryObject } from "../helpers/helper";
-import { categories } from "../constants/list";
+import { createQueryObject } from "../../../helpers/helper";
+import { categories } from "../../../constants/list";
 
 import styles from "./SideBar.module.css";
 

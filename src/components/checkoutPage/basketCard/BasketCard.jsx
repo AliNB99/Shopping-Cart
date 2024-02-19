@@ -1,6 +1,6 @@
 import { MdDeleteOutline } from "react-icons/md";
 
-import { shortenText } from "../helpers/helper";
+import { shortenText } from "../../../helpers/helper";
 
 import styles from "./BasketCard.module.css";
 

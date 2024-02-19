@@ -1,5 +1,5 @@
 import { ImSearch } from "react-icons/im";
-import { createQueryObject } from "../helpers/helper";
+import { createQueryObject } from "../../../helpers/helper";
 
 import styles from "./SearchBox.module.css";
 
