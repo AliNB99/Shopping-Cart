@@ -9,7 +9,7 @@ function Loader() {
         width="100px"
         height="100px"
         strokeWidth="3"
-        strokeColor="#fe5d42"
+        strokeColor="#f76d68"
       />
     </div>
   );

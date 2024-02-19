@@ -11,11 +11,7 @@ function CheckOutPage() {
   const clickHandler = (type, payload) => dispatch({ type, payload });
 
   if (!state.itemCounter) {
-    return (
-      <div className={styles.container}>
-        <p>Empty</p>
-      </div>
-    );
+    return <h1>Empty</h1>;
   }
 
   return (

@@ -63,6 +63,8 @@ const productQuantity = (state, id) => {
   }
 };
 
+
+
 export {
   shortenText,
   searchProducts,

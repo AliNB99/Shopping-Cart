@@ -3,9 +3,22 @@
   justify-content: space-between;
   align-items: flex-start;
   padding: 10px;
-  min-height: 1000px;
+}
+
+h1 {
+  height: 350px;
+  line-height: 350px;
+  text-align: center;
+  color: var(--color_primary);
 }
 
 .products {
   width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
 }

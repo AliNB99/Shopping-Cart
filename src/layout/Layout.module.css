@@ -14,19 +14,14 @@
   font-weight: 600;
 }
 
-.header div {
-  font-size: 1.6rem;
-  background-color: #fff;
-  text-align: center;
-  color: #888;
-  height: 40px;
-  width: 40px;
-  border-radius: 50px;
-  padding: 4px;
+.headerBtn {
+  display: flex;
+  align-items: center;
   position: relative;
+  gap: 1rem;
 }
 
-.header span {
+.headerBtn span {
   font-size: 0.9rem;
   width: 20px;
   height: 20px;
@@ -36,7 +31,30 @@
   border-radius: 50%;
   position: absolute;
   top: -7px;
-  right: -7px;
+  left: 27px;
+}
+
+.shopBasketBtn {
+  font-size: 1.6rem;
+  background-color: #fff;
+  text-align: center;
+  color: #888;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  padding: 4px;
+}
+
+.loginBtn {
+  font-size: 1.6rem;
+  font-weight: 900;
+  background-color: #fff;
+  text-align: center;
+  color: #888;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  padding: 4px;
 }
 
 .footer {
