@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import api from "../services/config";
+import toast from "react-hot-toast";
 
 const ProductContext = createContext();
 
@@ -11,7 +12,7 @@ function ProductsProvider({ children }) {
       try {
         setProducts(await api.get("/products"));
       } catch (error) {
-        console.log(error.message);
+        toast.error(error.message);
       }
     };
 

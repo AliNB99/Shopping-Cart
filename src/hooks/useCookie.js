@@ -1,4 +1,4 @@
-const useCookie = (token) => {
+const useCookie = (token, type) => {
   const cookie = document.cookie;
   if (!token) {
     return cookie;

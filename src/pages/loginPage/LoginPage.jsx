@@ -4,7 +4,7 @@ import api from "../../services/config";
 import styles from "./LoginPage.module.css";
 import { useCookie } from "../../hooks/useCookie";
 import toast from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -21,9 +21,10 @@ function LoginPage() {
           username: "mor_2314",
           password: "83r5^_",
         });
-        useCookie(res.token);
-        navigate("/products")
         toast.success("Your login was successful");
+        useCookie(res.token);
+        navigate("/products");
+        // window.location.reload();
       } catch (error) {
         toast.error(error.message);
       }

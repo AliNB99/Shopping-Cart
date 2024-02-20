@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import BasketCard from "../../components/checkoutPage/basketCard/BasketCard";
 import BasketSidebar from "../../components/checkoutPage/basketSidebar/BasketSidebar";
 import { useCart } from "../../context/CartContext";
@@ -8,7 +9,13 @@ import styles from "./CheckOutPage.module.css";
 function CheckOutPage() {
   const [state, dispatch] = useCart();
   useTitle("check out page");
-  const clickHandler = (type, payload) => dispatch({ type, payload });
+
+  const clickHandler = (type, payload) => {
+    dispatch({ type, payload });
+    if (type === "CHECKOUT") {
+      toast.success("Your purchase was successful");
+    }
+  };
 
   if (!state.itemCounter) {
     return <h1>Empty</h1>;

@@ -57,6 +57,42 @@
   padding: 4px;
 }
 
+.logout {
+  width: 400px;
+  height: 80px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px #aaa;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #fff;
+  color: black;
+  top: 50px;
+  right: 10px;
+  transition: all 0.3s;
+  display: none;
+}
+
+.showLogout {
+  display: inline-block !important;
+}
+
+.logout button {
+  font-size: 14px;
+  width: fit-content;
+  height: fit-content;
+  padding: 7px 10px;
+  background-color: var(--color_primary);
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.logout button:hover {
+  border: 1px solid var(--color_primary);
+  color: var(--color_primary);
+  background-color: #fff;
+}
+
 .footer {
   text-align: center;
   background-color: var(--color_main);
