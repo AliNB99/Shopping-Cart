@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import api from "../../services/config";
 
 import styles from "./LoginPage.module.css";
-import { useCookie } from "../../hooks/useCookie";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { useCookie } from "../../hooks/useCookie";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -23,8 +23,8 @@ function LoginPage() {
         });
         toast.success("Your login was successful");
         useCookie(res.token);
-        navigate("/products");
-        // window.location.reload();
+        navigate(-1);
+        window.location.reload();
       } catch (error) {
         toast.error(error.message);
       }

@@ -6,17 +6,21 @@ import styles from "./Layout.module.css";
 
 import { FiLogIn } from "react-icons/fi";
 import { FaUserAlt } from "react-icons/fa";
-import { useCookie } from "../hooks/useCookie";
 import { useEffect, useRef, useState } from "react";
+import { useCookie } from "../hooks/useCookie";
 import { deleteCookie } from "../helpers/helper";
 import toast from "react-hot-toast";
 
 function Layout({ children }) {
   const [seed, setSeed] = useState(1);
-
-  const [state] = useCart();
   const cookie = useCookie();
+  const [state] = useCart();
   const logout = useRef(null);
+
+  const reset = () => {
+    setSeed(Math.random());
+    window.location.reload();
+  };
 
   const showLogOutHandler = () => {
     logout.current.classList.toggle(styles.showLogout);
@@ -24,13 +28,10 @@ function Layout({ children }) {
 
   const logOutHandler = () => {
     deleteCookie();
+    reset();
     logout.current.classList.remove(styles.showLogout);
     toast.success("logout is successful");
   };
-
-  useEffect(() => {
-    setSeed(Math.random());
-  }, [seed]);
 
   return (
     <>

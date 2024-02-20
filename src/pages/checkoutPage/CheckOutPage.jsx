@@ -5,16 +5,24 @@ import { useCart } from "../../context/CartContext";
 import { useTitle } from "../../hooks/useTitle";
 
 import styles from "./CheckOutPage.module.css";
+import { useCookie } from "../../hooks/useCookie";
 
 function CheckOutPage() {
   const [state, dispatch] = useCart();
+  const cookie = useCookie();
   useTitle("check out page");
 
   const clickHandler = (type, payload) => {
-    dispatch({ type, payload });
     if (type === "CHECKOUT") {
-      toast.success("Your purchase was successful");
+      if (cookie) {
+        toast.success("Your purchase was successful");
+      } else {
+        toast.error("Please log in to your account");
+        return;
+      }
     }
+
+    dispatch({ type, payload });
   };
 
   if (!state.itemCounter) {

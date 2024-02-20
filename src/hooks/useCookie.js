@@ -1,12 +1,18 @@
-const useCookie = (token, type) => {
+const useCookie = (token) => {
   const cookie = document.cookie;
+
   if (!token) {
-    return cookie;
+    if (cookie) {
+      return cookie.split("=")[1];
+    } else {
+      return null;
+    }
   }
 
-  if (!cookie) {
+  if (!cookie && token) {
     document.cookie = `token=${token};max-age=${24 * 60 * 60};path=/`;
   } else {
+    console.log("second");
     return cookie.split("=")[1];
   }
 };
